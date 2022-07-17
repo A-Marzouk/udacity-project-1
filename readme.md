@@ -1,19 +1,36 @@
-#  typescript plyground
+# Image processing API (Udacity)
 
-## Getting Started
+Built by A. Marzouk
 
-### Installing Dependencies
+## Installation
 
-project requires having node installed https://nodejs.org/en/download/
-
-run ```npm install``` to install the dependencies
-
-### content
-packages for testing/developping backend apps, eslint and prettier configured
-
-## Testing
-Testing is done using jasmine
-To run the tests, run
+```bash
+npm install
 ```
+
+## Scripts:
+
+### To build the project please execute:
+
+```bash
+npm run build
+```
+
+### To run project tests please execute:
+
+```bash
 npm run test
 ```
+
+### To run production server:
+
+```bash
+npm run start-prod
+```
+
+## Usage
+
+```python
+
+```
+
