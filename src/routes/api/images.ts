@@ -1,9 +1,9 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import { validateProcessImages } from '../../middleware/validators/validateProcessImages';
+import { processImage } from '../../controllers/ImagesControllers';
 
 const router = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
-  res.send('images route');
-});
+router.get('/', validateProcessImages, processImage);
 
 export default router;
