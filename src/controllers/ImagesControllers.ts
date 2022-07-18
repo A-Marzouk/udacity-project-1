@@ -15,9 +15,9 @@ export const processImage = async (
   const alreadyResized = await fileExists(resizedFilePath);
 
   if (!alreadyResized) {
-    const myFile = await fs.readFile(filePath);
+    const image = await fs.readFile(filePath);
 
-    await sharp(myFile)
+    await sharp(image)
       .resize({
         width: parseFloat(width),
         height: parseFloat(height)
