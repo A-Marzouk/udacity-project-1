@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import sharp from 'sharp';
 import { promises as fs } from 'fs';
 import processImageQuery from '../interfaces/images';
+import { fileExists } from '../utils/utils';
 
 export const processImage = async (
   req: Request,
@@ -26,8 +27,4 @@ export const processImage = async (
   }
 
   return res.status(200).sendFile(resizedFilePath, { root: '.' });
-};
-
-const fileExists = async (path: string): Promise<boolean> => {
-  return !!(await fs.stat(path).catch(() => false));
 };

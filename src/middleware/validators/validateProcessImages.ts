@@ -18,12 +18,12 @@ export const validateProcessImages = [
   query('width')
     .exists()
     .withMessage('Image width is required')
-    .isNumeric()
+    .isInt()
     .withMessage('Please provide a valid width for the image'),
   query('height')
     .exists()
     .withMessage('Image height is required')
-    .isNumeric()
+    .isInt()
     .withMessage('Please provide a valid height for the image'),
   (req: Request, res: Response, next: NextFunction): void | Response => {
     const errors = validationResult(req);
