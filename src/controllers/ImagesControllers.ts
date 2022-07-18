@@ -14,18 +14,16 @@ export const processImage = async (
 
   const alreadyResized = await fileExists(resizedFilePath);
 
-  if (alreadyResized) {
-    return res.status(200).sendFile(resizedFilePath, { root: '.' });
+  if (!alreadyResized) {
+    const myFile = await fs.readFile(filePath);
+
+    await sharp(myFile)
+      .resize({
+        width: parseFloat(width),
+        height: parseFloat(height)
+      })
+      .toFile(resizedFilePath);
   }
-
-  const myFile = await fs.readFile(filePath);
-
-  await sharp(myFile)
-    .resize({
-      width: parseFloat(width),
-      height: parseFloat(height)
-    })
-    .toFile(`./src/assets/thumbs/${filename}.jpg`);
 
   return res.status(200).sendFile(resizedFilePath, { root: '.' });
 };
