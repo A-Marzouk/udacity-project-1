@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 import app from '../index';
-import { fileExists } from '../utils/utils';
+import { fileExists } from '../utils/filesUtils';
 
 const request = supertest(app);
 

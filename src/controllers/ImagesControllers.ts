@@ -1,8 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import sharp from 'sharp';
-import { promises as fs } from 'fs';
 import processImageQuery from '../interfaces/images';
-import { fileExists } from '../utils/utils';
+import { fileExists, resizeImageFile } from '../utils/filesUtils';
 
 export const processImage = async (
   req: Request,
@@ -17,17 +15,10 @@ export const processImage = async (
   const alreadyResized = await fileExists(resizedFilePath);
 
   if (!alreadyResized) {
-    const image = await fs.readFile(filePath);
-
     try {
-      await sharp(image)
-        .resize({
-          width: parseFloat(width),
-          height: parseFloat(height)
-        })
-        .toFile(resizedFilePath);
-    } catch (error) {
-      return next(error);
+      await resizeImageFile(filePath, resizedFilePath, width, height);
+    } catch (e) {
+      next(e);
     }
   }
 

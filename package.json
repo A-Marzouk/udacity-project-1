@@ -28,15 +28,15 @@
     "nodemon": "^2.0.13",
     "prettier": "^2.0.0",
     "ts-node": "^10.2.1",
-    "typescript": "4.4.3"
+    "typescript": "4.4.3",
+    "jasmine": "^3.9.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "supertest": "^6.1.6"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "express-validator": "^6.14.2",
-    "jasmine": "^3.9.0",
-    "jasmine-spec-reporter": "^7.0.0",
-    "sharp": "^0.30.7",
-    "supertest": "^6.1.6"
+    "sharp": "^0.30.7"
   }
 }
