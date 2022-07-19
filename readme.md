@@ -67,3 +67,12 @@ You should recieve the resized image back to the browser.
 
 ```
 
+## Features:
+
+```python
+
+- Resize images in the available images list.
+- Allows for multiple sizes of the same image.
+
+```
+
