@@ -12,7 +12,7 @@ export const processImage = async (
   const { filename, height, width } = req.query as unknown as processImageQuery;
 
   const filePath = `./src/assets/images/${filename}.jpg`;
-  const resizedFilePath = filePath.replace('images', 'thumbs');
+  const resizedFilePath = `./src/assets/thumbs/${filename}_${width}_${height}.jpg`;
 
   const alreadyResized = await fileExists(resizedFilePath);
 
