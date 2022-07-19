@@ -18,7 +18,7 @@ export const validateProcessImages = [
   query('width')
     .exists()
     .withMessage('Image width is required')
-    .isInt()
+    .isNumeric()
     .withMessage('Please provide a valid width for the image'),
   query('height')
     .exists()
